@@ -73,25 +73,24 @@ button {
   font-size: 14px;
 }
 
-h1{
+h1 {
   margin-bottom: 1rem;
 }
-.title{
+.title {
   font-size: 14px;
 }
-input{
+input {
   margin-bottom: 1rem;
 }
-input.checkbox{
+input.checkbox {
   margin-bottom: 0;
 }
 
-.checkbox{
+.checkbox {
   display: flex;
   justify-content: space-between;
-
 }
-.box1{
+.box1 {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -99,14 +98,14 @@ input.checkbox{
   width: 48.5%;
   height: 40px;
   border: 1px solid gray;
-  gap: .5rem;
+  gap: 0.5rem;
   margin: 10px 0px;
   border-radius: 5px;
 }
-.box1:hover{
+.box1:hover {
   background-color: lightgreen;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
-#message{
+#message {
   margin-bottom: 30px;
 }
