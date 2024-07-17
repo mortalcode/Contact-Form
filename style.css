@@ -7,6 +7,7 @@
   --White: hsl(0, 0%, 100%);
   --Greyone: hsl(186, 15%, 59%);
   --Greytwo: hsl(187, 24%, 22%);
+  --Greythree: hsl(169, 83%, 14%);
 }
 
 * {
@@ -30,8 +31,10 @@ main {
 
 .box {
   background-color: var(--White);
-  padding: 20px 30px;
+  padding: 25px 30px;
+  height: 580px;
   border-radius: 12px;
+
 }
 
 input[type="text"],
@@ -62,12 +65,17 @@ button {
   border: none;
   border-radius: 5px;
 }
+button:hover {
+  background-color: var(--Greythree);
+  transition: all 0.3s ease;
+}
+
 .form-alert {
   color: var(--Red);
   display: none;
 }
 
-.form-item {
+.form-item:nth-child(1) {
   display: flex;
   gap: 1rem;
   font-size: 14px;
@@ -76,7 +84,7 @@ button {
 h1 {
   margin-bottom: 1rem;
 }
-.title {
+label {
   font-size: 14px;
 }
 input {
@@ -86,26 +94,98 @@ input.checkbox {
   margin-bottom: 0;
 }
 
-.checkbox {
+.form-item:nth-child(3) .checkbox {
   display: flex;
-  justify-content: space-between;
+  gap: 0.5rem;
 }
-.box1 {
-  padding: 10px;
+
+.form-item:nth-child(3) .checkbox .box1 {
   display: flex;
   align-items: center;
-  padding-left: 1.5rem;
-  width: 48.5%;
-  height: 40px;
-  border: 1px solid gray;
+  cursor: pointer;
   gap: 0.5rem;
   margin: 10px 0px;
+  padding-left: 1.5rem;
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid gray;
   border-radius: 5px;
 }
+
+.form-item:nth-child(3) .checkbox .box1 input {
+  width: 1.5rem;
+  height: 1rem;
+  accent-color: var(--Greentwo);
+}
+
+.form-item:nth-child(3) .checkbox .box1 label {
+  width: 100%;
+  cursor: pointer;
+}
+
 .box1:hover {
   background-color: lightgreen;
   transition: all 0.3s ease;
 }
+.box1:active {
+  background-color: rgb(120, 232, 120);
+  font-weight: 500;
+}
 #message {
   margin-bottom: 30px;
+}
+
+#success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  border-radius: 5px;
+  background-color: rgb(69, 69, 69);
+  pointer-events: none;
+  width: max-content;
+  padding: 2rem;
+  height: 10%;
+  color: white;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* opacity: 0; */
+}
+#success-message:active {
+  display: block;
+  pointer-events: all;
+
+  animation-name: fadeOut;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0%,
+  25%,
+  50%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.form-item:nth-child(5) {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.form-item:nth-child(5) .checkbox {
+  cursor: pointer;
+  accent-color: var(--Greentwo);
+}
+.form-item:nth-child(5) label {
+  width: 60%;
+  cursor: pointer;
+  margin-left: 1rem;
 }
